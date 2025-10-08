@@ -297,9 +297,12 @@ export class MeridianbetTokenService {
       
       // Navigate to the Meridianbet page
       await page.goto(this.MERIDIANBET_URL, {
-        waitUntil: 'networkidle',
+        waitUntil: 'domcontentloaded',
         timeout: this.TIMEOUT
       });
+
+      // Wait for 25 seconds instead of networkidle
+      await page.waitForTimeout(20000);
 
       console.log('Page loaded, waiting for cookies...');
       
