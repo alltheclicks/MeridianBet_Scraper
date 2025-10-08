@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridianbet Scraper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Page -->
+        <div id="login-page" class="page">
+            <div class="login-container">
+                <div class="login-card">
+                    <h1>Meridianbet Scraper</h1>
+                    <p class="subtitle">Enter password to access the application</p>
+                    
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        
+                        <div id="error-message" class="error-message" style="display: none;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Page -->
+        <div id="main-page" class="page" style="display: none;">
+            <header class="main-header">
+                <h1>Meridianbet Data Extractor</h1>
+                <button id="logout-btn" class="btn btn-secondary">Logout</button>
+            </header>
+
+            <main class="main-content">
+                <div class="controls-panel">
+                    <div class="mode-selector">
+                        <label>Mode:</label>
+                        <div class="mode-buttons">
+                            <button id="live-mode-btn" class="mode-btn active" data-mode="live">Live</button>
+                            <button id="pregame-mode-btn" class="mode-btn" data-mode="pregame">Pre-game</button>
+                        </div>
+                    </div>
+
+                    <div class="sport-selector">
+                        <label>Sport:</label>
+                        <select id="sport-select">
+                            <option value="football">Football</option>
+                            <option value="basketball">Basketball</option>
+                            <option value="tennis">Tennis</option>
+                        </select>
+                    </div>
+
+                    <div id="interval-selector" class="interval-selector" style="display: none;">
+                        <label>Interval:</label>
+                        <select id="interval-select">
+                            <option value="1min">1 Minute</option>
+                            <option value="5min">5 Minutes</option>
+                            <option value="15min">15 Minutes</option>
+                            <option value="30min">30 Minutes</option>
+                            <option value="1hour">1 Hour</option>
+                        </select>
+                    </div>
+
+                    <button id="extract-btn" class="btn btn-primary">Start</button>
+                </div>
+
+                <div class="data-display">
+                    <h2>Extracted Data</h2>
+                    <div id="data-content" class="data-content">
+                        <p class="placeholder">Select mode, sport, and click "Extract Data" to begin</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
